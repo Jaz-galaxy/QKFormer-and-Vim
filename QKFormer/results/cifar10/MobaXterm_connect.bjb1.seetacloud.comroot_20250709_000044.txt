@@ -1,0 +1,320 @@
+(qkformer) root@autodl-container-d0884780b4-6757ef98:~/autodl-tmp/QKFormer/cifar10# python train.py \
+    --epochs 1 \
+    --batch-size 64 \
+    --model QKFormer \
+    --time-step 4 \
+    --layer 4 \
+    --dim 384 \
+    --num_heads 8 \
+    --patch-size 4 \
+    --mlp-ratio 4 \
+    --workers 8
+INFO:train:Training with a single process on 1 GPUs.
+Training with a single process on 1 GPUs.
+Creating model
+number of params: 6706234
+INFO:train:Model QKFormer created, param count:6706234
+Model QKFormer created, param count:6706234
+INFO:timm.data.config:Data processing configuration for current model + dataset:
+Data processing configuration for current model + dataset:
+INFO:timm.data.config:  input_size: (3, 32, 32)
+        input_size: (3, 32, 32)
+INFO:timm.data.config:  interpolation: bicubic
+        interpolation: bicubic
+INFO:timm.data.config:  mean: (0.4914, 0.4822, 0.4465)
+        mean: (0.4914, 0.4822, 0.4465)
+INFO:timm.data.config:  std: (0.247, 0.2435, 0.2616)
+        std: (0.247, 0.2435, 0.2616)
+INFO:timm.data.config:  crop_pct: 1.0
+        crop_pct: 1.0
+INFO:train:Using native Torch AMP. Training in mixed precision.
+Using native Torch AMP. Training in mixed precision.
+INFO:train:Scheduled epochs: 11
+Scheduled epochs: 11
+INFO:train:Train: 0 [   0/781 (  0%)]  Loss:  2.333245 (2.3332)  Time: 5.700s,   11.23/s  (5.700s,   11.23/s)  LR: 1.000e-05  Data: 1.139 (1.139)
+Train: 0 [   0/781 (  0%)]  Loss:  2.333245 (2.3332)  Time: 5.700s,   11.23/s  (5.700s,   11.23/s)  LR: 1.000e-05  Data: 1.139 (1.139)
+INFO:train:Train: 0 [ 780/781 (100%)]  Loss:  2.098159 (2.2169)  Time: 0.254s,  252.26/s  (0.271s,  236.38/s)  LR: 1.000e-05  Data: 0.000 (0.004)
+Train: 0 [ 780/781 (100%)]  Loss:  2.098159 (2.2169)  Time: 0.254s,  252.26/s  (0.271s,  236.38/s)  LR: 1.000e-05  Data: 0.000 (0.004)
+INFO:train:Test: [   0/156]  Time: 1.729 (1.729)  Loss:  1.8945 (1.8945)  Acc@1: 31.2500 (31.2500)  Acc@5: 85.9375 (85.9375)
+Test: [   0/156]  Time: 1.729 (1.729)  Loss:  1.8945 (1.8945)  Acc@1: 31.2500 (31.2500)  Acc@5: 85.9375 (85.9375)
+INFO:train:Test: [ 156/156]  Time: 0.263 (0.096)  Loss:  1.8643 (1.9223)  Acc@1: 25.0000 (31.9400)  Acc@5: 93.7500 (83.7900)
+Test: [ 156/156]  Time: 0.263 (0.096)  Loss:  1.8643 (1.9223)  Acc@1: 25.0000 (31.9400)  Acc@5: 93.7500 (83.7900)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 31.94 (epoch 0)
+*** Best metric: 31.94 (epoch 0)
+INFO:train:Train: 1 [   0/781 (  0%)]  Loss:  2.113174 (2.1132)  Time: 0.318s,  201.29/s  (0.318s,  201.29/s)  LR: 5.950e-05  Data: 0.051 (0.051)
+Train: 1 [   0/781 (  0%)]  Loss:  2.113174 (2.1132)  Time: 0.318s,  201.29/s  (0.318s,  201.29/s)  LR: 5.950e-05  Data: 0.051 (0.051)
+INFO:train:Train: 1 [ 780/781 (100%)]  Loss:  1.817232 (2.0602)  Time: 0.270s,  237.12/s  (0.269s,  237.71/s)  LR: 5.950e-05  Data: 0.000 (0.003)
+Train: 1 [ 780/781 (100%)]  Loss:  1.817232 (2.0602)  Time: 0.270s,  237.12/s  (0.269s,  237.71/s)  LR: 5.950e-05  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.120 (0.120)  Loss:  1.6982 (1.6982)  Acc@1: 32.8125 (32.8125)  Acc@5: 85.9375 (85.9375)
+Test: [   0/156]  Time: 0.120 (0.120)  Loss:  1.6982 (1.6982)  Acc@1: 32.8125 (32.8125)  Acc@5: 85.9375 (85.9375)
+INFO:train:Test: [ 156/156]  Time: 0.035 (0.081)  Loss:  1.7275 (1.6726)  Acc@1: 25.0000 (37.1800)  Acc@5: 93.7500 (90.2800)
+Test: [ 156/156]  Time: 0.035 (0.081)  Loss:  1.7275 (1.6726)  Acc@1: 25.0000 (37.1800)  Acc@5: 93.7500 (90.2800)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 37.18 (epoch 1)
+*** Best metric: 37.18 (epoch 1)
+INFO:train:Train: 2 [   0/781 (  0%)]  Loss:  2.102036 (2.1020)  Time: 0.297s,  215.49/s  (0.297s,  215.49/s)  LR: 1.090e-04  Data: 0.048 (0.048)
+Train: 2 [   0/781 (  0%)]  Loss:  2.102036 (2.1020)  Time: 0.297s,  215.49/s  (0.297s,  215.49/s)  LR: 1.090e-04  Data: 0.048 (0.048)
+INFO:train:Train: 2 [ 780/781 (100%)]  Loss:  1.891201 (1.9464)  Time: 0.271s,  236.37/s  (0.272s,  235.67/s)  LR: 1.090e-04  Data: 0.000 (0.003)
+Train: 2 [ 780/781 (100%)]  Loss:  1.891201 (1.9464)  Time: 0.271s,  236.37/s  (0.272s,  235.67/s)  LR: 1.090e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.115 (0.115)  Loss:  1.2578 (1.2578)  Acc@1: 56.2500 (56.2500)  Acc@5: 96.8750 (96.8750)
+Test: [   0/156]  Time: 0.115 (0.115)  Loss:  1.2578 (1.2578)  Acc@1: 56.2500 (56.2500)  Acc@5: 96.8750 (96.8750)
+INFO:train:Test: [ 156/156]  Time: 0.033 (0.081)  Loss:  1.4883 (1.3785)  Acc@1: 50.0000 (50.8200)  Acc@5: 93.7500 (93.8300)
+Test: [ 156/156]  Time: 0.033 (0.081)  Loss:  1.4883 (1.3785)  Acc@1: 50.0000 (50.8200)  Acc@5: 93.7500 (93.8300)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 50.82 (epoch 2)
+*** Best metric: 50.82 (epoch 2)
+INFO:train:Train: 3 [   0/781 (  0%)]  Loss:  2.147473 (2.1475)  Time: 0.310s,  206.76/s  (0.310s,  206.76/s)  LR: 1.585e-04  Data: 0.048 (0.048)
+Train: 3 [   0/781 (  0%)]  Loss:  2.147473 (2.1475)  Time: 0.310s,  206.76/s  (0.310s,  206.76/s)  LR: 1.585e-04  Data: 0.048 (0.048)
+INFO:train:Train: 3 [ 780/781 (100%)]  Loss:  1.675728 (1.8504)  Time: 0.251s,  255.15/s  (0.271s,  236.25/s)  LR: 1.585e-04  Data: 0.000 (0.003)
+Train: 3 [ 780/781 (100%)]  Loss:  1.675728 (1.8504)  Time: 0.251s,  255.15/s  (0.271s,  236.25/s)  LR: 1.585e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.103 (0.103)  Loss:  1.2031 (1.2031)  Acc@1: 56.2500 (56.2500)  Acc@5: 93.7500 (93.7500)
+Test: [   0/156]  Time: 0.103 (0.103)  Loss:  1.2031 (1.2031)  Acc@1: 56.2500 (56.2500)  Acc@5: 93.7500 (93.7500)
+INFO:train:Test: [ 156/156]  Time: 0.033 (0.081)  Loss:  1.2910 (1.2552)  Acc@1: 62.5000 (56.6000)  Acc@5: 93.7500 (95.4600)
+Test: [ 156/156]  Time: 0.033 (0.081)  Loss:  1.2910 (1.2552)  Acc@1: 62.5000 (56.6000)  Acc@5: 93.7500 (95.4600)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 56.6 (epoch 3)
+*** Best metric: 56.6 (epoch 3)
+INFO:train:Train: 4 [   0/781 (  0%)]  Loss:  1.628051 (1.6281)  Time: 0.312s,  204.90/s  (0.312s,  204.90/s)  LR: 2.080e-04  Data: 0.046 (0.046)
+Train: 4 [   0/781 (  0%)]  Loss:  1.628051 (1.6281)  Time: 0.312s,  204.90/s  (0.312s,  204.90/s)  LR: 2.080e-04  Data: 0.046 (0.046)
+INFO:train:Train: 4 [ 780/781 (100%)]  Loss:  1.947285 (1.7806)  Time: 0.259s,  247.37/s  (0.266s,  240.95/s)  LR: 2.080e-04  Data: 0.000 (0.003)
+Train: 4 [ 780/781 (100%)]  Loss:  1.947285 (1.7806)  Time: 0.259s,  247.37/s  (0.266s,  240.95/s)  LR: 2.080e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.108 (0.108)  Loss:  1.2266 (1.2266)  Acc@1: 56.2500 (56.2500)  Acc@5: 93.7500 (93.7500)
+Test: [   0/156]  Time: 0.108 (0.108)  Loss:  1.2266 (1.2266)  Acc@1: 56.2500 (56.2500)  Acc@5: 93.7500 (93.7500)
+INFO:train:Test: [ 156/156]  Time: 0.042 (0.082)  Loss:  1.4316 (1.2555)  Acc@1: 43.7500 (55.6600)  Acc@5: 93.7500 (95.0400)
+Test: [ 156/156]  Time: 0.042 (0.082)  Loss:  1.4316 (1.2555)  Acc@1: 43.7500 (55.6600)  Acc@5: 93.7500 (95.0400)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 56.6 (epoch 3)
+*** Best metric: 56.6 (epoch 3)
+INFO:train:Train: 5 [   0/781 (  0%)]  Loss:  1.873027 (1.8730)  Time: 0.299s,  213.98/s  (0.299s,  213.98/s)  LR: 2.575e-04  Data: 0.037 (0.037)
+Train: 5 [   0/781 (  0%)]  Loss:  1.873027 (1.8730)  Time: 0.299s,  213.98/s  (0.299s,  213.98/s)  LR: 2.575e-04  Data: 0.037 (0.037)
+INFO:train:Train: 5 [ 780/781 (100%)]  Loss:  1.925572 (1.7408)  Time: 0.238s,  269.01/s  (0.263s,  243.56/s)  LR: 2.575e-04  Data: 0.000 (0.003)
+Train: 5 [ 780/781 (100%)]  Loss:  1.925572 (1.7408)  Time: 0.238s,  269.01/s  (0.263s,  243.56/s)  LR: 2.575e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.120 (0.120)  Loss:  1.0566 (1.0566)  Acc@1: 65.6250 (65.6250)  Acc@5: 93.7500 (93.7500)
+Test: [   0/156]  Time: 0.120 (0.120)  Loss:  1.0566 (1.0566)  Acc@1: 65.6250 (65.6250)  Acc@5: 93.7500 (93.7500)
+INFO:train:Test: [ 156/156]  Time: 0.033 (0.083)  Loss:  0.8638 (1.1311)  Acc@1: 68.7500 (63.7300)  Acc@5: 100.0000 (95.0800)
+Test: [ 156/156]  Time: 0.033 (0.083)  Loss:  0.8638 (1.1311)  Acc@1: 68.7500 (63.7300)  Acc@5: 100.0000 (95.0800)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 63.73 (epoch 5)
+*** Best metric: 63.73 (epoch 5)
+INFO:train:Train: 6 [   0/781 (  0%)]  Loss:  1.989697 (1.9897)  Time: 0.289s,  221.53/s  (0.289s,  221.53/s)  LR: 3.070e-04  Data: 0.050 (0.050)
+Train: 6 [   0/781 (  0%)]  Loss:  1.989697 (1.9897)  Time: 0.289s,  221.53/s  (0.289s,  221.53/s)  LR: 3.070e-04  Data: 0.050 (0.050)
+INFO:train:Train: 6 [ 780/781 (100%)]  Loss:  1.613727 (1.6948)  Time: 0.276s,  232.25/s  (0.267s,  239.65/s)  LR: 3.070e-04  Data: 0.000 (0.003)
+Train: 6 [ 780/781 (100%)]  Loss:  1.613727 (1.6948)  Time: 0.276s,  232.25/s  (0.267s,  239.65/s)  LR: 3.070e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.114 (0.114)  Loss:  1.2256 (1.2256)  Acc@1: 57.8125 (57.8125)  Acc@5: 90.6250 (90.6250)
+Test: [   0/156]  Time: 0.114 (0.114)  Loss:  1.2256 (1.2256)  Acc@1: 57.8125 (57.8125)  Acc@5: 90.6250 (90.6250)
+INFO:train:Test: [ 156/156]  Time: 0.041 (0.087)  Loss:  0.9092 (1.2666)  Acc@1: 68.7500 (57.5900)  Acc@5: 100.0000 (92.7100)
+Test: [ 156/156]  Time: 0.041 (0.087)  Loss:  0.9092 (1.2666)  Acc@1: 68.7500 (57.5900)  Acc@5: 100.0000 (92.7100)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 63.73 (epoch 5)
+*** Best metric: 63.73 (epoch 5)
+INFO:train:Train: 7 [   0/781 (  0%)]  Loss:  1.565291 (1.5653)  Time: 0.308s,  207.46/s  (0.308s,  207.46/s)  LR: 3.565e-04  Data: 0.041 (0.041)
+Train: 7 [   0/781 (  0%)]  Loss:  1.565291 (1.5653)  Time: 0.308s,  207.46/s  (0.308s,  207.46/s)  LR: 3.565e-04  Data: 0.041 (0.041)
+INFO:train:Train: 7 [ 780/781 (100%)]  Loss:  1.404392 (1.6535)  Time: 0.271s,  236.44/s  (0.269s,  238.34/s)  LR: 3.565e-04  Data: 0.000 (0.003)
+Train: 7 [ 780/781 (100%)]  Loss:  1.404392 (1.6535)  Time: 0.271s,  236.44/s  (0.269s,  238.34/s)  LR: 3.565e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.126 (0.126)  Loss:  1.2305 (1.2305)  Acc@1: 64.0625 (64.0625)  Acc@5: 95.3125 (95.3125)
+Test: [   0/156]  Time: 0.126 (0.126)  Loss:  1.2305 (1.2305)  Acc@1: 64.0625 (64.0625)  Acc@5: 95.3125 (95.3125)
+INFO:train:Test: [ 156/156]  Time: 0.041 (0.083)  Loss:  0.7925 (1.2220)  Acc@1: 68.7500 (58.2500)  Acc@5: 100.0000 (95.1500)
+Test: [ 156/156]  Time: 0.041 (0.083)  Loss:  0.7925 (1.2220)  Acc@1: 68.7500 (58.2500)  Acc@5: 100.0000 (95.1500)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-7.pth.tar', 58.25)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-7.pth.tar', 58.25)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 63.73 (epoch 5)
+*** Best metric: 63.73 (epoch 5)
+INFO:train:Train: 8 [   0/781 (  0%)]  Loss:  1.740957 (1.7410)  Time: 0.311s,  205.92/s  (0.311s,  205.92/s)  LR: 4.060e-04  Data: 0.055 (0.055)
+Train: 8 [   0/781 (  0%)]  Loss:  1.740957 (1.7410)  Time: 0.311s,  205.92/s  (0.311s,  205.92/s)  LR: 4.060e-04  Data: 0.055 (0.055)
+INFO:train:Train: 8 [ 780/781 (100%)]  Loss:  1.488216 (1.6449)  Time: 0.269s,  238.23/s  (0.270s,  237.27/s)  LR: 4.060e-04  Data: 0.000 (0.003)
+Train: 8 [ 780/781 (100%)]  Loss:  1.488216 (1.6449)  Time: 0.269s,  238.23/s  (0.270s,  237.27/s)  LR: 4.060e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.117 (0.117)  Loss:  0.9585 (0.9585)  Acc@1: 71.8750 (71.8750)  Acc@5: 96.8750 (96.8750)
+Test: [   0/156]  Time: 0.117 (0.117)  Loss:  0.9585 (0.9585)  Acc@1: 71.8750 (71.8750)  Acc@5: 96.8750 (96.8750)
+INFO:train:Test: [ 156/156]  Time: 0.032 (0.082)  Loss:  0.9258 (0.9909)  Acc@1: 75.0000 (70.0800)  Acc@5: 93.7500 (97.0900)
+Test: [ 156/156]  Time: 0.032 (0.082)  Loss:  0.9258 (0.9909)  Acc@1: 75.0000 (70.0800)  Acc@5: 93.7500 (97.0900)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-8.pth.tar', 70.08)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-7.pth.tar', 58.25)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-8.pth.tar', 70.08)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-7.pth.tar', 58.25)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 70.08 (epoch 8)
+*** Best metric: 70.08 (epoch 8)
+INFO:train:Train: 9 [   0/781 (  0%)]  Loss:  1.948335 (1.9483)  Time: 0.326s,  196.30/s  (0.326s,  196.30/s)  LR: 4.555e-04  Data: 0.051 (0.051)
+Train: 9 [   0/781 (  0%)]  Loss:  1.948335 (1.9483)  Time: 0.326s,  196.30/s  (0.326s,  196.30/s)  LR: 4.555e-04  Data: 0.051 (0.051)
+INFO:train:Train: 9 [ 780/781 (100%)]  Loss:  1.957116 (1.6047)  Time: 0.264s,  241.98/s  (0.269s,  237.76/s)  LR: 4.555e-04  Data: 0.000 (0.003)
+Train: 9 [ 780/781 (100%)]  Loss:  1.957116 (1.6047)  Time: 0.264s,  241.98/s  (0.269s,  237.76/s)  LR: 4.555e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.123 (0.123)  Loss:  0.9805 (0.9805)  Acc@1: 70.3125 (70.3125)  Acc@5: 96.8750 (96.8750)
+Test: [   0/156]  Time: 0.123 (0.123)  Loss:  0.9805 (0.9805)  Acc@1: 70.3125 (70.3125)  Acc@5: 96.8750 (96.8750)
+INFO:train:Test: [ 156/156]  Time: 0.045 (0.084)  Loss:  0.7178 (1.0047)  Acc@1: 75.0000 (67.4200)  Acc@5: 100.0000 (96.5100)
+Test: [ 156/156]  Time: 0.045 (0.084)  Loss:  0.7178 (1.0047)  Acc@1: 75.0000 (67.4200)  Acc@5: 100.0000 (96.5100)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-8.pth.tar', 70.08)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-9.pth.tar', 67.42)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-7.pth.tar', 58.25)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-8.pth.tar', 70.08)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-9.pth.tar', 67.42)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-7.pth.tar', 58.25)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-0.pth.tar', 31.94)
+
+INFO:train:*** Best metric: 70.08 (epoch 8)
+*** Best metric: 70.08 (epoch 8)
+INFO:train:Train: 10 [   0/781 (  0%)]  Loss:  1.567136 (1.5671)  Time: 0.299s,  213.86/s  (0.299s,  213.86/s)  LR: 5.050e-04  Data: 0.045 (0.045)
+Train: 10 [   0/781 (  0%)]  Loss:  1.567136 (1.5671)  Time: 0.299s,  213.86/s  (0.299s,  213.86/s)  LR: 5.050e-04  Data: 0.045 (0.045)
+INFO:train:Train: 10 [ 780/781 (100%)]  Loss:  1.849971 (1.5838)  Time: 0.262s,  244.04/s  (0.267s,  239.33/s)  LR: 5.050e-04  Data: 0.000 (0.003)
+Train: 10 [ 780/781 (100%)]  Loss:  1.849971 (1.5838)  Time: 0.262s,  244.04/s  (0.267s,  239.33/s)  LR: 5.050e-04  Data: 0.000 (0.003)
+INFO:train:Test: [   0/156]  Time: 0.124 (0.124)  Loss:  0.8569 (0.8569)  Acc@1: 73.4375 (73.4375)  Acc@5: 98.4375 (98.4375)
+Test: [   0/156]  Time: 0.124 (0.124)  Loss:  0.8569 (0.8569)  Acc@1: 73.4375 (73.4375)  Acc@5: 98.4375 (98.4375)
+INFO:train:Test: [ 156/156]  Time: 0.032 (0.084)  Loss:  0.8271 (0.8798)  Acc@1: 75.0000 (72.6000)  Acc@5: 100.0000 (98.0100)
+Test: [ 156/156]  Time: 0.032 (0.084)  Loss:  0.8271 (0.8798)  Acc@1: 75.0000 (72.6000)  Acc@5: 100.0000 (98.0100)
+INFO:timm.utils.checkpoint_saver:Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-10.pth.tar', 72.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-8.pth.tar', 70.08)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-9.pth.tar', 67.42)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-7.pth.tar', 58.25)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+
+Current checkpoints:
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-10.pth.tar', 72.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-8.pth.tar', 70.08)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-9.pth.tar', 67.42)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-5.pth.tar', 63.73)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-7.pth.tar', 58.25)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-6.pth.tar', 57.59)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-3.pth.tar', 56.6)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-4.pth.tar', 55.66)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-2.pth.tar', 50.82)
+ ('./output/train/20250708-231719-QKFormer-32/checkpoint-1.pth.tar', 37.18)
+
+INFO:train:*** Best metric: 72.6 (epoch 10)
+*** Best metric: 72.6 (epoch 10)
+INFO:train:*** Best metric: 72.6 (epoch 10)
+*** Best metric: 72.6 (epoch 10)
+(qkformer) root@autodl-container-d0884780b4-6757ef98:~/autodl-tmp/QKFormer/cifar10#

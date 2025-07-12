@@ -1,0 +1,110 @@
+(qkformer) root@autodl-container-d0884780b4-6757ef98:~/autodl-tmp/QKFormer/imagenet# ls
+__pycache__              imagenet_origin_log.txt      output_dir_qkformer        reorganize_tiny_imagenet.py  test.py                 train_tiny_imagenet_tqdm.py
+data                     imagenet_origin_log_384.txt  output_tiny_imagenet       run_tiny_imagenet.sh         test_tqdm.sh            util
+engine_finetune.py       logs                         output_tiny_imagenet_tqdm  save_model.py                train.py
+engine_finetune_tqdm.py  mini_data                    qkformer.py                split_dataset.py             train_tiny_imagenet.py
+(qkformer) root@autodl-container-d0884780b4-6757ef98:~/autodl-tmp/QKFormer/imagenet# python train_tiny_imagenet_tqdm.py --batch_size 256 --epochs 40 --data_path ./mini_data --num_workers 2 --warmup_epochs 1
+Not using distributed mode
+[16:22:02.594609] Dataset ImageFolder
+    Number of datapoints: 100000
+    Root location: ./mini_data/train
+    StandardTransform
+Transform: Compose(
+               RandomResizedCropAndInterpolation(size=(64, 64), scale=(0.08, 1.0), ratio=(0.75, 1.3333), interpolation=bicubic)
+               RandomHorizontalFlip(p=0.5)
+               RandAugment(n=2, ops=
+                AugmentOp(name=AutoContrast, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=Equalize, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=Invert, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=Rotate, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=PosterizeIncreasing, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=SolarizeIncreasing, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=SolarizeAdd, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=ColorIncreasing, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=ContrastIncreasing, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=BrightnessIncreasing, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=SharpnessIncreasing, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=ShearX, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=ShearY, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=TranslateXRel, p=0.5, m=9, mstd=0.5)
+                AugmentOp(name=TranslateYRel, p=0.5, m=9, mstd=0.5))
+               ToTensor()
+               Normalize(mean=tensor([0.4850, 0.4560, 0.4060]), std=tensor([0.2290, 0.2240, 0.2250]))
+               RandomErasing(p=0.25, mode=pixel, count=(1, 1))
+           )
+/root/miniconda3/envs/qkformer/lib/python3.8/site-packages/torchvision/transforms/transforms.py:332: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  warnings.warn(
+[16:22:02.653879] Dataset ImageFolder
+    Number of datapoints: 10000
+    Root location: ./mini_data/val
+    StandardTransform
+Transform: Compose(
+               Resize(size=73, interpolation=bicubic, max_size=None, antialias=None)
+               CenterCrop(size=(64, 64))
+               ToTensor()
+               Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))
+           )
+[16:22:04.439900] ================================================================================
+[16:22:04.439978] ?? QKFormer Tiny ImageNet Training Starting
+[16:22:04.439991] ================================================================================
+[16:22:04.439998] ?? Dataset Info:
+[16:22:04.440022]    ? Training samples: 100,000
+[16:22:04.440032]    ? Validation samples: 10,000
+[16:22:04.440039]    ? Number of classes: 200
+[16:22:04.440048]    ? Input size: 64x64
+[16:22:04.441058]
+???  Model Info:
+[16:22:04.441077]    ? Model: QKFormer_10_384
+[16:22:04.441089]    ? Parameters: 16.17M
+[16:22:04.441096]    ? Time steps: 4
+[16:22:04.441104]
+??  Training Config:
+[16:22:04.441112]    ? Epochs: 40
+[16:22:04.441119]    ? Batch size: 256
+[16:22:04.441126]    ? Effective batch size: 256
+[16:22:04.441135]    ? Learning rate: 1.00e-04
+[16:22:04.441144]    ? Weight decay: 0.05
+[16:22:04.441151]    ? Warmup epochs: 1
+[16:22:04.441157]
+?? Output:
+[16:22:04.441165]    ? Checkpoints: ./output_tiny_imagenet_tqdm
+[16:22:04.441173]    ? Logs: ./output_tiny_imagenet_tqdm
+[16:22:04.441179] ================================================================================
+[16:22:04.442711] ?? Loss function: LabelSmoothingCrossEntropy()
+[16:22:04.442728]
+?? Starting training for 40 epochs...
+Epoch   0: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 390/390 [14:58<00:00,  2.30s/batch, Loss=5.3180, LR=9.97e-05, GPU=16.5GB]
+[16:37:02.588337] Epoch 0 completed - Avg Loss: 5.3180, LR: 9.97e-05
+Validating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 40/40 [00:32<00:00,  1.24batch/s, Loss=5.2804, Acc@1=0.62%, Acc@5=3.30%]
+[16:37:35.029872] Validation Results - Acc@1: 0.62%, Acc@5: 3.30%, Loss: 5.2804
+[16:37:35.402592] ?? New best model saved! Acc: 0.62%
+[16:37:35.402664] ?? Best accuracy so far: 0.62% (Epoch 0)
+Epoch   1: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 390/390 [14:38<00:00,  2.25s/batch, Loss=5.2655, LR=9.98e-05, GPU=16.5GB]
+[16:52:13.798548] Epoch 1 completed - Avg Loss: 5.2655, LR: 9.98e-05
+Validating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 40/40 [00:30<00:00,  1.30batch/s, Loss=5.1469, Acc@1=1.74%, Acc@5=6.18%]
+[16:52:44.603632] Validation Results - Acc@1: 1.74%, Acc@5: 6.18%, Loss: 5.1469
+[16:52:44.963827] ?? New best model saved! Acc: 1.74%
+[16:52:44.963907] ?? Best accuracy so far: 1.74% (Epoch 1)
+Epoch   2: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 390/390 [14:44<00:00,  2.27s/batch, Loss=5.2008, LR=9.94e-05, GPU=16.5GB]
+[17:07:29.911057] Epoch 2 completed - Avg Loss: 5.2008, LR: 9.94e-05
+Validating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 40/40 [00:32<00:00,  1.23batch/s, Loss=5.0002, Acc@1=2.81%, Acc@5=10.74%]
+[17:08:02.626241] Validation Results - Acc@1: 2.81%, Acc@5: 10.74%, Loss: 5.0002
+[17:08:03.010127] ?? New best model saved! Acc: 2.81%
+[17:08:03.010234] ?? Best accuracy so far: 2.81% (Epoch 2)
+Epoch   3:   7%|¨€¨€                           | 27/390 [01:05<14:33,  2.41s/batch, Loss=5.1659, LR=9.93e-05, GPU=16.5GB]                                                Epoch   3:  17%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨‡                                                               | 67/390 [02:37<12:47,  2.38s/batch, Loss=5.1571, LR=9.92e-05, GPU=16.5GB]Epoch   3:  17%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨‡                                                               | 67/390 [02:39<12:48,  2.38s/batch, Loss=5.1571, LR=9.92e-05, GPU=16.5GB]
+Traceback (most recent call last):
+  File "train_tiny_imagenet_tqdm.py", line 372, in <module>
+    main(args)
+  File "train_tiny_imagenet_tqdm.py", line 306, in main
+    train_stats = train_one_epoch(
+  File "/root/autodl-tmp/QKFormer/imagenet/engine_finetune_tqdm.py", line 67, in train_one_epoch
+    loss_scaler(loss, optimizer, clip_grad=max_norm,
+  File "/root/autodl-tmp/QKFormer/imagenet/util/misc.py", line 258, in __call__
+    self._scaler.scale(loss).backward(create_graph=create_graph)
+  File "/root/miniconda3/envs/qkformer/lib/python3.8/site-packages/torch/_tensor.py", line 396, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/root/miniconda3/envs/qkformer/lib/python3.8/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+
+(qkformer) root@autodl-container-d0884780b4-6757ef98:~/autodl-tmp/QKFormer/imagenet#
